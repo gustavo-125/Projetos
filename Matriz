@@ -1,0 +1,47 @@
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N;
+            int[,] A;
+
+            Console.WriteLine("Digite o tamanho da matriz:");
+            N = int.Parse(Console.ReadLine());
+            Console.WriteLine("Digite os dados da matriz separado por espaço:");
+            A = new int[N, N];
+
+            for (int i=0; i<N; i++)
+            {
+                String[] s = Console.ReadLine().Split(' ');
+                for (int j=0; j<N; j++)
+                {
+                    A[i, j] = int.Parse(s[j]);
+                }
+
+            }
+            Console.WriteLine("Diagonal Principal:");
+            for (int i=0; i<N; i++)
+            {
+                Console.WriteLine(A[i, i] + " ");
+            }
+            Console.WriteLine();
+
+            int cont = 0;
+            for (int i=0; i<N; i++)
+            {
+                for (int j=0; j<N; j++)
+                {
+                    if (A[i, j] < 0)
+                    {
+                        cont++;
+                    }
+                }
+            }
+
+            Console.WriteLine("Quantidade de Negativos = " + cont);
+
+            Console.ReadLine();
+        }
+    }
+}
