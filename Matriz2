@@ -7,18 +7,23 @@ namespace Matriz
         static void Main(string[] args)
         {
             int M, N;
+
             int[,] mat;
+
             Console.WriteLine("Digite quantas linhas e quantas colunas deseja:");
+
             string[] s = Console.ReadLine().Split(' ');
-           
+
             M = int.Parse(s[0]);
-          
+
             N = int.Parse(s[1]);
 
             mat = new int[M, N];
- 
+
             for (int i = 0; i < M; i++)
             {
+                Console.WriteLine("Digite os valores de acordo com a quantidade de colunas:");
+
                 s = Console.ReadLine().Split(' ');
                 for (int j = 0; j < N; j++)
                 {
@@ -26,7 +31,7 @@ namespace Matriz
                 }
 
             }
-
+            Console.WriteLine("Soma das linhas são: ");
             int[] vet = new int[M];
 
             for (int i = 0; i < M; i++)
